@@ -2,8 +2,8 @@ import {form_control, input, text, label, inputs, auth} from "../styles/Auth.mod
 import {motion} from "framer-motion";
 const LoginAuth = () => {
     const attemptLogin = async() => {
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
+        let myHeaders = new Headers();
+        // myHeaders.append("Content-Type", "application/json");
         let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/login',
         {
             method: "POST",

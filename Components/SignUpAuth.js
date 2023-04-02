@@ -3,9 +3,9 @@ import {motion} from "framer-motion";
 
 const attemptLogin = async () => {
     let myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
+// myHeaders.append("Content-Type", "application/json");
 
-        let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/signup', {
+        let response = await fetch('go-jwt-auth-production.up.railway.app/users/signup', {
             method: 'POST',
             body: JSON.stringify({
                 "fullName": "Henry Lotsu",
@@ -25,6 +25,7 @@ myHeaders.append("Content-Type", "application/json");
         if (response.status === 201) {
             console.log("Looks like you figured it out")
         }
+        console.log(response.status)
 
 }
 const SignUpAuth = () => {
