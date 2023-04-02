@@ -5,7 +5,7 @@ const attemptLogin = async () => {
     let myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
-        let response = await fetch('go-jwt-auth-production.up.railway.app/users/signup', {
+        let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/signup', {
             method: 'POST',
             body: JSON.stringify({
                 "fullName": "Henry Lotsu",
