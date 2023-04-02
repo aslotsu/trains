@@ -2,16 +2,16 @@ import {form_control, input, text, label, inputs, auth} from "../styles/Auth.mod
 import {motion} from "framer-motion";
 
 const attemptLogin = async () => {
-    var myHeaders = new Headers();
+    let myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
-        let response = await fetch('http://localhost:8901/users/signup', {
+        let response = await fetch('go-jwt-auth-production.up.railway.app/users/signup', {
             method: 'POST',
             body: JSON.stringify({
-                "fullName": "Henry Lotsudffdfddf",
+                "fullName": "Henry Lotsu",
                 "email": "gaga12bobo @gmail.com",
-                "phone": "frsi12edric fd3223fdfdfde7",
-                "password": "3979s3dfdffd239",
+                "phone": "87383273232897",
+                "password": "3979s3239",
                 "role": "SHOPPER"
             }),
             headers: myHeaders,
