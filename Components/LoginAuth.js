@@ -9,7 +9,7 @@ const LoginAuth = () => {
             {
                 method: "POST",
                 body: JSON.stringify({
-                    "email": "gaga12 bobo @gmail.com",
+                    "email": "gaga12bobo @gmail.com",
                     "phone": "87383273232897",
                     "password": "3979s3239",
                 }),
