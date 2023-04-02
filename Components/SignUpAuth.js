@@ -26,6 +26,7 @@ const attemptLogin = async () => {
         console.log("Looks like you figured it out")
     }
     console.log(response.status)
+    console.log(response.headers)
 
 }
 const SignUpAuth = () => {

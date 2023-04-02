@@ -17,7 +17,7 @@ const LoginAuth = () => {
                 credentials: 'include'
             })
         await response.text()
-        console.log(response)
+        console.log(response.headers)
         console.log(response.status)
         response.status === 200 && console.log("looks like it was successful, maybe")
     }
