@@ -10,8 +10,8 @@ const LoginAuth = () => {
                 method: "POST",
                 body: JSON.stringify({
                     "email": "gaga12 bobo @gmail.com",
-                    "phone": "8738327 3232897",
-                    "password": "3979 s3239",
+                    "phone": "87383273232897",
+                    "password": "3979s3239",
                 }),
                 headers: myHeaders,
                 credentials: 'include'
@@ -40,7 +40,7 @@ const LoginAuth = () => {
                 <div className={input}>
                     <label className={label} htmlFor="email">Email</label>
                     <motion.input className={text} type="text" name="email" id="email" placeholder={"Enter your email"}
-                                  initial={{opacity: 0, y: "-40px"}} animate={{opacity: 1, y: 0}}/>
+                          initial={{opacity: 0, y: "-40px"}} animate={{opacity: 1, y: 0}}/>
                 </div>
             </div>
 
