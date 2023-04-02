@@ -9,17 +9,29 @@ const LoginAuth = () => {
             {
                 method: "POST",
                 body: JSON.stringify({
-                    "email": "gaga12bobo @gmail.com",
-                    "phone": "87383273232897",
-                    "password": "3979s3239",
+                    "email": "gaga12 bobo @gmail.com",
+                    "phone": "8738327 3232897",
+                    "password": "3979 s3239",
                 }),
                 headers: myHeaders,
                 credentials: 'include'
             })
         await response.text()
-        console.log(response.headers)
         console.log(response.status)
         response.status === 200 && console.log("looks like it was successful, maybe")
+    }
+
+    const attemptLogout = async () => {
+        let myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/logout',
+            {
+                method: "POST",
+
+            })
+        await response.text()
+        console.log(response.status)
+        response.status === 200 && console.log("looks like it was successful, maybe, goodbye")
     }
 
     return <form>
@@ -47,6 +59,12 @@ const LoginAuth = () => {
                     e.preventDefault()
                     await attemptLogin()
                 }} type={"submit"}>Log In
+                </button>
+
+                <button className={auth} onClick={async (e) => {
+                    e.preventDefault()
+                    await attemptLogout()
+                }} type={"submit"}>Log Out
                 </button>
             </div>
         </div>
