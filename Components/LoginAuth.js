@@ -3,7 +3,7 @@ import {motion} from "framer-motion";
 const LoginAuth = () => {
     const attemptLogin = async() => {
         let myHeaders = new Headers();
-        // myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Content-Type", "application/json");
         let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/login',
         {
             method: "POST",
