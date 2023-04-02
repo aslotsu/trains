@@ -17,7 +17,7 @@ const attemptLogin = async () => {
         headers: myHeaders,
         credentials: 'include'
     })
-    await response.text()
+    await response.json()
 
     if (response.status === 409) {
         console.error("The email already exists in the db bro!")
@@ -26,6 +26,7 @@ const attemptLogin = async () => {
         console.log("Looks like you figured it out")
     }
     console.log(response.status)
+    console.log(response.headers)
 
 }
 const SignUpAuth = () => {

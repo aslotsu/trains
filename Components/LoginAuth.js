@@ -29,8 +29,9 @@ const LoginAuth = () => {
                 method: "POST",
 
             })
-        await response.text()
+        await response.json()
         console.log(response.status)
+        console.log(response.headers)
         response.status === 200 && console.log("looks like it was successful, maybe, goodbye")
     }
 
