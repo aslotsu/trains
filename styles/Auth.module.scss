@@ -16,12 +16,12 @@ div.full {
    & button.auth {
      width: 100%;
      all: unset;
-     border: 2px solid cornflowerblue;
+     border: 2px solid #1ec397;
      padding: 5px 15px;
      cursor: pointer;
      border-radius: 8px;
       &:hover {
-        background-color: black;
+        background-color: #1ec397;
         color: white;
         scale: 1.1;
 

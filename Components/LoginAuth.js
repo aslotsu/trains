@@ -1,6 +1,25 @@
 import {form_control, input, text, label, inputs, auth} from "../styles/Auth.module.css"
 import {motion} from "framer-motion";
 const LoginAuth = () => {
+    const attemptLogin = async() => {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/login',
+        {
+            method: "POST",
+            body: JSON.stringify({
+                "email": "gaga12bobo @gmail.com",
+                "phone": "frsi12edric fd3223fdfdfde7",
+                "password": "3979s3dfdffd239"
+            }),
+            headers: myHeaders,
+            credentials: 'include'
+        })
+        await response.text()
+        console.log(response)
+        console.log(response.status)
+        response.status === 200 && console.log("looks like it was successful, maybe")
+    }
 
     return <form>
               <div className={inputs}>
@@ -22,12 +41,11 @@ const LoginAuth = () => {
                   <div className={form_control}>
                       <button className={auth} onClick={(e)=> {
                           e.preventDefault()
-                          console.log("Yes please we can go")
+                          attemptLogin()
                       }} type={"submit"}>Log In</button>
                   </div>
               </div>
             </form>
-
 
 }
 

@@ -1,7 +1,34 @@
 import {form_control, input, text, label, inputs, auth} from "../styles/Auth.module.css"
 import {motion} from "framer-motion";
 
+const attemptLogin = async () => {
+    var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+        let response = await fetch('http://localhost:8901/users/signup', {
+            method: 'POST',
+            body: JSON.stringify({
+                "fullName": "Henry Lotsudffdfddf",
+                "email": "gaga12bobo @gmail.com",
+                "phone": "frsi12edric fd3223fdfdfde7",
+                "password": "3979s3dfdffd239",
+                "role": "SHOPPER"
+            }),
+            headers: myHeaders,
+            credentials: 'include'
+        })
+        await response.text()
+
+        if (response.status === 409) {
+           console.error("The email already exists in the db bro!")
+        }
+        if (response.status === 201) {
+            console.log("Looks like you figured it out")
+        }
+
+}
 const SignUpAuth = () => {
+
     return <form>
         <div className={inputs}>
             <div className={form_control}>
@@ -27,9 +54,10 @@ const SignUpAuth = () => {
             </div>
 
             <div className={form_control}>
-                <button className={auth} onClick={(e)=> {
+                <button className={auth} onClick={async (e)=> {
                     e.preventDefault()
-                    console.log("Yes please we can go")
+                    await attemptLogin()
+
                 }} type={"submit"}>SignUp</button>
             </div>
         </div>
