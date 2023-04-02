@@ -9,8 +9,8 @@ const LoginAuth = () => {
             method: "POST",
             body: JSON.stringify({
                 "email": "gaga12bobo @gmail.com",
-                "phone": "frsi12edric fd3223fdfdfde7",
-                "password": "3979s3dfdffd239"
+                "phone": "87383273232897",
+                "password": "3979s3239",
             }),
             headers: myHeaders,
             credentials: 'include'
@@ -39,9 +39,9 @@ const LoginAuth = () => {
                   </div>
 
                   <div className={form_control}>
-                      <button className={auth} onClick={(e)=> {
+                      <button className={auth} onClick={async (e)=> {
                           e.preventDefault()
-                          attemptLogin()
+                          await attemptLogin()
                       }} type={"submit"}>Log In</button>
                   </div>
               </div>
