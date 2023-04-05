@@ -4,7 +4,8 @@ const modalSlice = createSlice({
     name: "modal",
     initialState: {
         open : false,
-        hasAccount: false
+        hasAccount: false,
+        isLoggedIn: false
     },
     reducers: {
         toggle : state => {
@@ -12,6 +13,9 @@ const modalSlice = createSlice({
         },
         changeForm: state => {
             state.hasAccount = !state.hasAccount
+        },
+        login: state => {
+            state.isLoggedIn = !state.isLoggedIn
         }
     }
 })
