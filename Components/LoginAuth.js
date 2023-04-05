@@ -27,6 +27,7 @@ const LoginAuth = () => {
         let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/logout',
             {
                 method: "POST",
+                credentials: 'include'
 
             })
         await response.text()
@@ -62,7 +63,7 @@ const LoginAuth = () => {
 
                 <button className={auth} onClick={async (e) => {
                     e.preventDefault()
-                    await attemptLogout()
+                    attemptLogout()
                 }} type={"submit"}>Log Out
                 </button>
             </div>
