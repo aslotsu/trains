@@ -12,11 +12,6 @@ const index = () => {
         myHeaders.append("Content-Type", "application/json");
         let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/get-user',
             {
-                body: JSON.stringify({
-                    "email": "gaga12bobo @gmail.com",
-                    "phone": "87383273232897",
-                    "password": "3979s3239",
-                }),
                 headers: myHeaders,
                 credentials: 'include'
             })
