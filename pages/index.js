@@ -16,6 +16,7 @@ const index = () => {
                 credentials: 'include'
             })
         const final = await response.json()
+        console.log(final)
         setName(final.email)
         response.status === 200 && console.log("The user has been got")
     }
