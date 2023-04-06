@@ -10,7 +10,7 @@ const index = () => {
     const getUser = async () => {
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-        let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/login',
+        let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/get-user',
             {
                 method: "POST",
                 body: JSON.stringify({
@@ -22,7 +22,7 @@ const index = () => {
                 credentials: 'include'
             })
         const final = await response.json()
-        setName(final.name)
+        setName(final.email)
         response.status === 200 && console.log("The user has been got")
     }
 
@@ -36,7 +36,7 @@ const index = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const openModal = useSelector(state => state.modal.open)
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const loggedInUser = useSelector(state => state.modal.isLoggedIn)
+    // const loggedInUser = useSelector(state => state.modal.isLoggedIn)
 
     return <main>
       <h1 style={{textAlign: "center"}}>Countries received from rest api</h1>
@@ -45,7 +45,9 @@ const index = () => {
             {openModal && <Portal >
                 <AuthPopup as={motion.div} />
             </Portal>}
-            {loggedInUser && <h1>Welcome {name} to the app dear user!</h1>}
+            {
+                // loggedInUser &&
+                <h1>Welcome {name} to the app dear user!</h1>}
 
         </AnimatePresence>
     </main>
