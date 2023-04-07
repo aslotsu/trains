@@ -4,13 +4,15 @@ import {changeForm, toggle} from "@/store/features/modal";
 const Navbar = () => {
     const openModal = useSelector(state => state.modal.open)
     const hasAccount = useSelector(state => state.modal.hasAccount)
+    const loggedInUser = useSelector(state => state.modal.isLoggedIn)
+
 
     const dispatch = useDispatch()
 
     return <nav className={bar}>
         <h1>Countries App</h1>
        <div>
-           {!hasAccount ?<> <button className={auth} onClick={()=> {
+           {!loggedInUser ?<> <button className={auth} onClick={()=> {
                console.log(openModal)
                dispatch(toggle())
                hasAccount && dispatch(changeForm())
