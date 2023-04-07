@@ -13,16 +13,21 @@ const index = () => {
     const getUser = async () => {
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-        let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/get-user')
-        const final = await response
+        let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/get-user', {
+            method: 'GET',
+            redirect: "follow"
+        })
+        const final = await response.text()
         console.log("Final result",final)
         setName(final.email)
         response.status === 200 && console.log("The user has been got")
     }
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    useEffect(()=> {
-        {loggedInUser &&  getUser().then(r => console.log(r)).catch(e => console.log(e)) }
+    useEffect(async () => {
+        {
+            loggedInUser && await getUser()
+        }
     },[loggedInUser])
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [name, setName] = useState(null)
