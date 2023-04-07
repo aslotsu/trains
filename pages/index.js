@@ -32,7 +32,7 @@ const index = () => {
         {
             loggedInUser && getUser()
         }
-    },[loggedInUser])
+    })
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [name, setName] = useState(null)
 
