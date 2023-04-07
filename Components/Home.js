@@ -5,10 +5,11 @@ import {login} from "@/store/features/modal";
 import {AnimatePresence, motion} from "framer-motion";
 import Portal from "@/Components/Portal";
 import AuthPopup from "@/Components/AuthPopup";
-import Router from "next/router"
+import usePush from "@/Components/UsePush";
 
 
 const Home = () => {
+    const push = usePush()
 
     const loggedInUser = useSelector(state => state.modal.isLoggedIn)
     const dispatch = useDispatch()
@@ -36,9 +37,9 @@ const Home = () => {
                 }
             }
         )()
-        loggedInUser && Router.reload()
+        loggedInUser && push(window.location.pathname)
         console.log(loggedInUser, "Might reload the page in a jiff")
-    }, [dispatch, loggedInUser])
+    }, [push, dispatch, loggedInUser])
 
 
 
