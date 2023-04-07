@@ -9,7 +9,6 @@ import Router from "next/router";
 
 
 const Home = () => {
-    const push = usePush()
 
     const loggedInUser = useSelector(state => state.modal.isLoggedIn)
     const dispatch = useDispatch()
@@ -39,7 +38,7 @@ const Home = () => {
         )()
         {!loggedInUser && Router.reload()}
         console.log(loggedInUser, "Might reload the page in a jiff")
-    }, [push, dispatch, loggedInUser])
+    }, [dispatch, loggedInUser])
 
 
 
