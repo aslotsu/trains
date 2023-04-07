@@ -14,7 +14,10 @@ const AuthPopup = () => {
 
     return<motion.div className={overlay} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity  : 0, transition: {duration: 0.17}}}>
         <motion.div className={full} initial={{opacity: 0, y: "20vh"}} animate={{opacity: 1, y: "0"}} exit={{opacity: 0, y: "10vh", transition: {duration: 0.2}}}>
-            <CloseSvg onClick={()=> router.refresh()} />
+            <CloseSvg onClick={()=> {
+                console.log(`Page refreshing`)
+                router.refresh()
+            }} />
                 { hasAccount ?<SignUpAuth /> :
                     <LoginAuth/>}
             <button  onClick={()=> {dispatch(changeForm())}}>
