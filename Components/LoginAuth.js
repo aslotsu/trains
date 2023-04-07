@@ -1,7 +1,7 @@
 import {form_control, input, text, label, inputs, auth} from "../styles/Auth.module.css"
 import {motion} from "framer-motion";
 import {useDispatch} from "react-redux";
-import {login} from "@/store/features/modal";
+import {login, logout} from "@/store/features/modal";
 import {console} from "next/dist/compiled/@edge-runtime/primitives/console";
 
 

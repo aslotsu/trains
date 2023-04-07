@@ -29,9 +29,9 @@ const index = () => {
         setName(final.email)
 
         console.log("Email of logged in user", final.email)
-        {response.status === 200 && console.log("The user has been got")
-            dispatch(login())
-        }
+        {response.status === 200 && console.log("The user has been got")}
+            final && (dispatch(login()))
+
     }
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
