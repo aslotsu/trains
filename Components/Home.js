@@ -1,13 +1,16 @@
 import {useDispatch, useSelector} from "react-redux";
-import { useEffect, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 import {console} from "next/dist/compiled/@edge-runtime/primitives/console";
 import {login} from "@/store/features/modal";
 import {AnimatePresence, motion} from "framer-motion";
 import Portal from "@/Components/Portal";
 import AuthPopup from "@/Components/AuthPopup";
-import Router from "next/router";
+import {useRouter} from "next/navigation";
+// import {useRouter} from "next/navigation";
 
 const Home = () => {
+    const router = useRouter()
+    useMemo(()=> router.refresh(), [router])
 
     const loggedInUser = useSelector(state => state.modal.isLoggedIn)
     const dispatch = useDispatch()
@@ -37,11 +40,6 @@ const Home = () => {
             }
         )()
     }, [dispatch, loggedInUser])
-
-    { !loggedInUser && Router.reload() }
-
-
-
 
     const [name, setName] = useState(null)
 
