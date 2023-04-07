@@ -21,6 +21,7 @@ const index = () => {
         })
         const final = await response.json()
         console.log("Final result",final.email)
+        console.log("Running get user from page first render")
         setName(final.email)
 
         console.log("Email of logged in user", final.email)

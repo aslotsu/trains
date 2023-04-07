@@ -41,6 +41,9 @@ const LoginAuth = () => {
         // console.log("Email of logged in user", final.email)
         // response.status === 200 && console.log("The user has been got")
         console.log(response)
+        if (response.status === 404) {
+            console.log("Looks like the logging out might have worked")
+        }
         console.log("User may have been successfully logged out")
     }
 
