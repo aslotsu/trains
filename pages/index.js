@@ -15,7 +15,8 @@ const index = () => {
         myHeaders.append("Content-Type", "application/json");
         let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/get-user', {
             method: 'GET',
-            redirect: "follow"
+            redirect: "follow",
+            credentials: "include"
         })
         const final = await response.text()
         console.log("Final result",final)
