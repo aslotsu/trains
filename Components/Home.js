@@ -5,14 +5,12 @@ import {login} from "@/store/features/modal";
 import {AnimatePresence, motion} from "framer-motion";
 import Portal from "@/Components/Portal";
 import AuthPopup from "@/Components/AuthPopup";
-import {useRouter} from "next/navigation";
 
 
 const Home = () => {
 
     const loggedInUser = useSelector(state => state.modal.isLoggedIn)
     const dispatch = useDispatch()
-    const router = useRouter()
 
     useEffect(()=> {
         !loggedInUser && (
@@ -38,7 +36,7 @@ const Home = () => {
 
             }
         )()
-    }, [router,dispatch, loggedInUser])
+    }, [dispatch, loggedInUser])
 
 
 
