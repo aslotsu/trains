@@ -5,6 +5,7 @@ import {login} from "@/store/features/modal";
 import {AnimatePresence, motion} from "framer-motion";
 import Portal from "@/Components/Portal";
 import AuthPopup from "@/Components/AuthPopup";
+import Router from "next/router";
 
 
 const Home = () => {
@@ -38,6 +39,9 @@ const Home = () => {
         )()
     }, [dispatch, loggedInUser])
 
+    useEffect(()=> {
+        Router.reload()
+    },[])
 
 
 
