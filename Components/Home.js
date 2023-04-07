@@ -35,13 +35,10 @@ const Home = () => {
                 }
                 {
                     final && console.log("The user has been got")
-                }
-                router.reload()
-
-            }
-
+                }}
         )()
-    }, [dispatch, loggedInUser])
+        router.reload()
+    }, [router, dispatch, loggedInUser])
 
     const [name, setName] = useState(null)
 
