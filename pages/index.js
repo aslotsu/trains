@@ -22,7 +22,7 @@ const index = () => {
         const final = await response.json()
         console.log("Final result",final.email)
         setName(final.email)
-        setName("Alfred Gbagba Lotsu")
+        // setName("Alfred Gbagba Lotsu")
         console.log("Email of logged in user", final.email)
         response.status === 200 && console.log("The user has been got")
     }
