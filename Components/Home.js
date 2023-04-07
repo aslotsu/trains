@@ -5,7 +5,7 @@ import {login} from "@/store/features/modal";
 import {AnimatePresence, motion} from "framer-motion";
 import Portal from "@/Components/Portal";
 import AuthPopup from "@/Components/AuthPopup";
-import usePush from "@/Components/UsePush";
+import Router from "next/router";
 
 
 const Home = () => {
@@ -37,7 +37,7 @@ const Home = () => {
                 }
             }
         )()
-        loggedInUser && push(window.location.pathname)
+        {!loggedInUser && Router.reload()}
         console.log(loggedInUser, "Might reload the page in a jiff")
     }, [push, dispatch, loggedInUser])
 
