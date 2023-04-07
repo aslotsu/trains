@@ -5,7 +5,7 @@ import {login} from "@/store/features/modal";
 import {AnimatePresence, motion} from "framer-motion";
 import Portal from "@/Components/Portal";
 import AuthPopup from "@/Components/AuthPopup";
-import {useRouter} from "next/router";
+import {useRouter} from "next/navigation";
 
 
 const Home = () => {
@@ -35,13 +35,13 @@ const Home = () => {
                 {
                     final && console.log("The user has been got")
                 }
+                window.location.reload()
             }
         )()
-        if (!router.isReady){
-            router.reload()
-        }
+
         console.log(loggedInUser, "Might reload the page in a jiff")
     }, [router,dispatch, loggedInUser])
+
 
 
 
