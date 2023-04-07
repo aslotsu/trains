@@ -30,7 +30,7 @@ const index = () => {
 
         console.log("Email of logged in user", final.email)
         {response.status === 200 && console.log("The user has been got")}
-            final && (dispatch(login()))
+        {final && dispatch(login())}
 
     }
 
