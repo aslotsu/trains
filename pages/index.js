@@ -1,17 +1,14 @@
 import AuthPopup from "@/Components/AuthPopup";
-import {useDispatch, useSelector} from "react-redux";
+import { useSelector} from "react-redux";
 import Portal from "@/Components/Portal";
-import {login} from "@/store/features/modal"
 import {AnimatePresence, motion} from "framer-motion";
 import {useEffect, useState} from "react";
 import {console} from "next/dist/compiled/@edge-runtime/primitives/console";
 
 const index = () => {
 
-   // eslint-disable-next-line react-hooks/rules-of-hooks
-    const loggedInUser = useSelector(state => state.modal.isLoggedIn)
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const dispatch = useDispatch()
+    const loggedInUser = useSelector(state => state.modal.isLoggedIn)
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const getUser = async () => {
@@ -19,7 +16,6 @@ const index = () => {
         myHeaders.append("Content-Type", "application/json");
         let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/get-user')
         const final = await response.json()
-        dispatch(login())
         console.log("Final result",final)
         setName(final.email)
         response.status === 200 && console.log("The user has been got")

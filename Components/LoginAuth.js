@@ -1,10 +1,12 @@
 import {form_control, input, text, label, inputs, auth} from "../styles/Auth.module.css"
 import {motion} from "framer-motion";
 import {useDispatch} from "react-redux";
+import {login} from "@/store/features/modal";
 
 
 const LoginAuth = () => {
-    // const dispatch = useDispatch
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const dispatch = useDispatch()
     const attemptLogin = async () => {
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -21,6 +23,7 @@ const LoginAuth = () => {
             })
         await response.json()
         console.log(response.status)
+        dispatch(login())
         response.status === 200 && console.log("looks like it was successful, maybe")
     }
 
