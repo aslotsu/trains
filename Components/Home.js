@@ -38,9 +38,7 @@ const Home = () => {
         )()
     }, [dispatch, loggedInUser])
 
-    useEffect(()=> {
-        Router.push("?loggedIn=true",undefined,{shallow: true}).then()
-    },[])
+    { !loggedInUser && Router.reload() }
 
 
 
