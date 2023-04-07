@@ -8,7 +8,7 @@ import AuthPopup from "@/Components/AuthPopup";
 import {useRouter} from "next/navigation";
 
 const Home = () => {
-
+    const router = useRouter()
 
     const loggedInUser = useSelector(state => state.modal.isLoggedIn)
     const dispatch = useDispatch()
@@ -36,8 +36,11 @@ const Home = () => {
                 }}
         )()
     }, [dispatch, loggedInUser])
-    const router = useRouter()
-    router.refresh()
+    useEffect(()=> {
+        router.refresh()
+    })
+
+
 
     const [name, setName] = useState(null)
 
