@@ -5,7 +5,8 @@ const modalSlice = createSlice({
     initialState: {
         open : false,
         hasAccount: false,
-        isLoggedIn: false
+        isLoggedIn: false,
+        refreshed: false
     },
     reducers: {
         toggle : state => {
@@ -19,9 +20,13 @@ const modalSlice = createSlice({
         },
         logout: state => {
             state.isLoggedIn = false
+        },
+        refresh: state => {
+            state.refreshed = true
         }
+
     }
 })
 
-export const {toggle, changeForm, login, logout} = modalSlice.actions
+export const {toggle, changeForm, login, logout, refresh} = modalSlice.actions
 export default modalSlice.reducer
