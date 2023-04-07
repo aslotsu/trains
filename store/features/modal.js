@@ -15,7 +15,7 @@ const modalSlice = createSlice({
             state.hasAccount = !state.hasAccount
         },
         login: state => {
-            state.isLoggedIn = !state.isLoggedIn
+            state.isLoggedIn = true
         }
     }
 })
