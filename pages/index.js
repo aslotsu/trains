@@ -13,32 +13,32 @@ const index = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const dispatch = useDispatch()
 
-
-    const getUser = async () => {
-        let myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/get-user', {
-            method: 'GET',
-            redirect: "follow",
-            headers: myHeaders,
-            credentials: "include"
-        })
-        const final = await response.json()
-        console.log("Running get user from page first render")
-        setName(final.email)
-
-        console.log("Email of logged in user", final.email)
-        {response.status === 200 &&  dispatch(login()) }
-        {final && console.log("The user has been got")}
-
-    }
-
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    useEffect( () => {
-        {
-            !loggedInUser && getUser()
-        }
-    })
+    useEffect(()=> {
+        !loggedInUser && (
+            async () => {
+                let myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+                let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/get-user', {
+                    method: 'GET',
+                    redirect: "follow",
+                    headers: myHeaders,
+                    credentials: "include"
+                })
+                const final = await response.json()
+                console.log("Running get user from page first render")
+                setName(final.email)
+                console.log("Response from get user call", final)
+                console.log("Email of logged in user", final.email)
+                {
+                    response.status === 200 && dispatch(login())
+                }
+                {
+                    final && console.log("The user has been got")
+                }
+            }
+        )()
+    }, [dispatch, loggedInUser])
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [name, setName] = useState(null)
 
