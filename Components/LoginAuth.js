@@ -36,10 +36,12 @@ const LoginAuth = () => {
             headers: myHeaders,
             credentials: "include"
         })
-        const final = await response.json()
-        console.log("Final result",final.email)
-        console.log("Email of logged in user", final.email)
-        response.status === 200 && console.log("The user has been got")
+        // const final = await response.json()
+        // console.log("Final result",final.email)
+        // console.log("Email of logged in user", final.email)
+        // response.status === 200 && console.log("The user has been got")
+        console.log(response)
+        console.log("User may have been successfully logged out")
     }
 
     const attemptLogout = async () => {
