@@ -22,7 +22,7 @@ const index = () => {
         const final = await response.json()
         console.log("Final result",final.email)
         setName(final.email)
-        // setName("Alfred Gbagba Lotsu")
+
         console.log("Email of logged in user", final.email)
         response.status === 200 && console.log("The user has been got")
     }
@@ -45,9 +45,7 @@ const index = () => {
             {openModal && <Portal >
                 <AuthPopup as={motion.div} />
             </Portal>}
-            {
-                // loggedInUser &&
-                <h1>Welcome {name} to the app dear user!</h1>}
+            {loggedInUser && <h1>Welcome {name} to the app dear user!</h1>}
 
         </AnimatePresence>
     </main>

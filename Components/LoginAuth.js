@@ -2,6 +2,7 @@ import {form_control, input, text, label, inputs, auth} from "../styles/Auth.mod
 import {motion} from "framer-motion";
 import {useDispatch} from "react-redux";
 import {login} from "@/store/features/modal";
+import {console} from "next/dist/compiled/@edge-runtime/primitives/console";
 
 
 const LoginAuth = () => {
@@ -24,6 +25,21 @@ const LoginAuth = () => {
         console.log(response.status)
         dispatch(login())
         response.status === 200 && console.log("looks like it was successful, maybe")
+    }
+
+    const getUser = async () => {
+        let myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/get-user', {
+            method: 'GET',
+            redirect: "follow",
+            headers: myHeaders,
+            credentials: "include"
+        })
+        const final = await response.json()
+        console.log("Final result",final.email)
+        console.log("Email of logged in user", final.email)
+        response.status === 200 && console.log("The user has been got")
     }
 
     const attemptLogout = async () => {
@@ -68,7 +84,8 @@ const LoginAuth = () => {
 
                 <button className={auth} onClick={async (e) => {
                     e.preventDefault()
-                    attemptLogout()
+                    await attemptLogout()
+                    await getUser()
                 }} type={"submit"}>Log Out
                 </button>
             </div>
