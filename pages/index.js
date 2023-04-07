@@ -19,7 +19,7 @@ const index = () => {
             headers: myHeaders,
             credentials: "include"
         })
-        const final = await response.text()
+        const final = await response.json()
         console.log("Final result",final)
         setName(final.email)
         console.log("Email of logged in user", final.email)
