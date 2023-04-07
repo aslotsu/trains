@@ -33,12 +33,11 @@ const Home = () => {
                 setName(final.email)
                 console.log("Response from get user call", final)
                 {
-                    response.status === 200 && dispatch(login())
+                    response.status === 200 && dispatch(login()) && notify()
                 }
                 {
                     final && console.log("The user has been got")
                 }
-                notify()
 
             }
         )()
