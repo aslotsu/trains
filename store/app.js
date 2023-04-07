@@ -4,7 +4,8 @@ import modalReducer from "./features/modal"
 const store = configureStore({
    reducer: {
        modal: modalReducer,
-       changeForm: modalReducer
+       changeForm: modalReducer,
+       login: modalReducer
    }
 })
 

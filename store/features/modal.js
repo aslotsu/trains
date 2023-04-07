@@ -20,5 +20,5 @@ const modalSlice = createSlice({
     }
 })
 
-export const {toggle, changeForm} = modalSlice.actions
+export const {toggle, changeForm, login} = modalSlice.actions
 export default modalSlice.reducer
