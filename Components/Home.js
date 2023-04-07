@@ -5,10 +5,10 @@ import {login} from "@/store/features/modal";
 import {AnimatePresence, motion} from "framer-motion";
 import Portal from "@/Components/Portal";
 import AuthPopup from "@/Components/AuthPopup";
-import {useRouter} from "next/navigation";
+import Router from "next/router"
+
 
 const Home = () => {
-    const router = useRouter()
 
     const loggedInUser = useSelector(state => state.modal.isLoggedIn)
     const dispatch = useDispatch()
@@ -33,7 +33,9 @@ const Home = () => {
                 }
                 {
                     final && console.log("The user has been got")
-                }}
+                }
+                Router.reload()
+            }
         )()
     }, [dispatch, loggedInUser])
 
