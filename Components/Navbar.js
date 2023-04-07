@@ -10,17 +10,19 @@ const Navbar = () => {
     return <nav className={bar}>
         <h1>Countries App</h1>
        <div>
-           <button className={auth} onClick={()=> {
+           {!hasAccount ?<> <button className={auth} onClick={()=> {
                console.log(openModal)
                dispatch(toggle())
                hasAccount && dispatch(changeForm())
            }}>Login</button>
-           <button  className={auth} onClick={()=>{
+               <button  className={auth} onClick={()=>{
                console.log(openModal)
                dispatch(toggle())
                dispatch(changeForm())
                hasAccount && dispatch(changeForm())
            }}>Register</button>
+               </>
+           : <button>Log tf out</button>}
        </div>
     </nav>
 
