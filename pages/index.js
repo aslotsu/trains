@@ -10,7 +10,6 @@ const index = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const loggedInUser = useSelector(state => state.modal.isLoggedIn)
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     const getUser = async () => {
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -24,7 +23,7 @@ const index = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(()=> {
         {loggedInUser &&  getUser().then(r => console.log(r)).catch(e => console.log(e)) }
-    },[getUser, loggedInUser])
+    },[loggedInUser])
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [name, setName] = useState(null)
 
