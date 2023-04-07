@@ -9,8 +9,6 @@ import  {useRouter} from "next/navigation"
 const index = () => {
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const router = useRouter()
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const loggedInUser = useSelector(state => state.modal.isLoggedIn)
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const dispatch = useDispatch()
@@ -38,7 +36,6 @@ const index = () => {
                 {
                     final && console.log("The user has been got")
                 }
-                router.refresh()
             }
 
     )()
