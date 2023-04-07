@@ -30,7 +30,7 @@ const index = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect( () => {
         {
-            loggedInUser && getUser()
+            !loggedInUser && getUser()
         }
     })
     // eslint-disable-next-line react-hooks/rules-of-hooks
