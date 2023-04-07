@@ -21,7 +21,6 @@ const LoginAuth = () => {
                 headers: myHeaders,
                 credentials: 'include'
             })
-        await response.json()
         console.log(response.status)
         dispatch(login())
         response.status === 200 && console.log("looks like it was successful, maybe")
