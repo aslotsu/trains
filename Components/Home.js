@@ -1,11 +1,11 @@
 import {useDispatch, useSelector} from "react-redux";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {console} from "next/dist/compiled/@edge-runtime/primitives/console";
 import {login} from "@/store/features/modal";
 import {AnimatePresence, motion} from "framer-motion";
 import Portal from "@/Components/Portal";
 import AuthPopup from "@/Components/AuthPopup";
-import {useRouter} from "next/router";
+import {useRouter} from "next/navigation";
 
 const Home = () => {
 
@@ -14,8 +14,11 @@ const Home = () => {
     const dispatch = useDispatch()
     const router = useRouter()
 
-    useEffect(()=> {
+   const newPage = useCallback(()=> {
+        router.refresh()
+   },[router])
 
+    useEffect(()=> {
         !loggedInUser && (
             async () => {
                 let myHeaders = new Headers();
@@ -37,8 +40,8 @@ const Home = () => {
                     final && console.log("The user has been got")
                 }}
         )()
-        router.reload()
-    }, [router, dispatch, loggedInUser])
+
+    }, [newPage,dispatch, loggedInUser])
 
     const [name, setName] = useState(null)
 
