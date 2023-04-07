@@ -5,9 +5,12 @@ import {login} from "@/store/features/modal";
 import {AnimatePresence, motion} from "framer-motion";
 import Portal from "@/Components/Portal";
 import AuthPopup from "@/Components/AuthPopup";
+import toast from "react-hot-toast";
 
 
 const Home = () => {
+
+    const notify = () => toast("Login was successful, continue")
 
 
 
@@ -35,7 +38,7 @@ const Home = () => {
                 {
                     final && console.log("The user has been got")
                 }
-
+                notify()
 
             }
         )()

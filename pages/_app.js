@@ -4,6 +4,7 @@ const poppins = Poppins({subsets: ["devanagari"], weight : ["100","200", "300","
 import Navbar from "@/Components/Navbar";
 import {Provider} from "react-redux";
 import store from "@/store/app";
+import {Toaster} from "react-hot-toast";
 
 
 export default function App({ Component, pageProps }) {
@@ -11,6 +12,7 @@ export default function App({ Component, pageProps }) {
     <main className={poppins.className}>
       <Navbar />
       <Component {...pageProps} />
+      <Toaster />
     </main>
   </Provider>
 }
