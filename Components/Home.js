@@ -40,7 +40,7 @@ const Home = () => {
                     final && console.log("The user has been got")
                 }}
         )()
-
+        newPage()
     }, [newPage,dispatch, loggedInUser])
 
     const [name, setName] = useState(null)
