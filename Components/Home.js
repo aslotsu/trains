@@ -7,7 +7,6 @@ import Portal from "@/Components/Portal";
 import AuthPopup from "@/Components/AuthPopup";
 import Router from "next/router";
 
-
 const Home = () => {
 
     const loggedInUser = useSelector(state => state.modal.isLoggedIn)
@@ -40,7 +39,7 @@ const Home = () => {
     }, [dispatch, loggedInUser])
 
     useEffect(()=> {
-        Router.reload()
+        Router.push("?loggedIn=true",undefined,{shallow: true}).then()
     },[])
 
 
