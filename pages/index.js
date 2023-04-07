@@ -39,11 +39,10 @@ const index = () => {
                     final && console.log("The user has been got")
                 }
                 router.refresh()
-
             }
 
     )()
-    }, [router,dispatch, loggedInUser])
+    }, [dispatch, loggedInUser])
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [name, setName] = useState(null)
 
