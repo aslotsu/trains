@@ -1,14 +1,18 @@
 import AuthPopup from "@/Components/AuthPopup";
-import { useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import Portal from "@/Components/Portal";
 import {AnimatePresence, motion} from "framer-motion";
 import {useEffect, useState} from "react";
 import {console} from "next/dist/compiled/@edge-runtime/primitives/console";
+import {login} from "@/store/features/modal";
 
 const index = () => {
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const loggedInUser = useSelector(state => state.modal.isLoggedIn)
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const dispatch = useDispatch()
+
 
     const getUser = async () => {
         let myHeaders = new Headers();
@@ -25,7 +29,9 @@ const index = () => {
         setName(final.email)
 
         console.log("Email of logged in user", final.email)
-        response.status === 200 && console.log("The user has been got")
+        {response.status === 200 && console.log("The user has been got")
+            dispatch(login())
+        }
     }
 
     // eslint-disable-next-line react-hooks/rules-of-hooks

@@ -43,6 +43,7 @@ const LoginAuth = () => {
         console.log(response)
         if (response.status === 404) {
             console.log("Looks like the logging out might have worked")
+            dispatch(logout())
         }
         console.log("User may have been successfully logged out")
     }

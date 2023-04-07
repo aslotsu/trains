@@ -5,7 +5,8 @@ const store = configureStore({
    reducer: {
        modal: modalReducer,
        changeForm: modalReducer,
-       login: modalReducer
+       login: modalReducer,
+       logout: modalReducer
    }
 })
 

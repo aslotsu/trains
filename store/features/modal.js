@@ -23,5 +23,5 @@ const modalSlice = createSlice({
     }
 })
 
-export const {toggle, changeForm, login} = modalSlice.actions
+export const {toggle, changeForm, login, logout} = modalSlice.actions
 export default modalSlice.reducer
