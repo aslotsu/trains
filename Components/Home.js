@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
-import {useCallback, useEffect, useState} from "react";
+import { useEffect, useState} from "react";
 import {console} from "next/dist/compiled/@edge-runtime/primitives/console";
 import {login} from "@/store/features/modal";
 import {AnimatePresence, motion} from "framer-motion";
@@ -12,11 +12,6 @@ const Home = () => {
 
     const loggedInUser = useSelector(state => state.modal.isLoggedIn)
     const dispatch = useDispatch()
-    const router = useRouter()
-
-   const newPage = useCallback(()=> {
-        router.refresh()
-   },[router])
 
     useEffect(()=> {
         !loggedInUser && (
@@ -40,8 +35,9 @@ const Home = () => {
                     final && console.log("The user has been got")
                 }}
         )()
-        newPage()
-    }, [newPage,dispatch, loggedInUser])
+    }, [dispatch, loggedInUser])
+    const router = useRouter()
+    router.refresh()
 
     const [name, setName] = useState(null)
 
