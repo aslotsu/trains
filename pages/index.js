@@ -8,8 +8,7 @@ import {login} from "@/store/features/modal";
 import  {useRouter} from "next/navigation"
 const index = () => {
 
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const router = useRouter()
+
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const loggedInUser = useSelector(state => state.modal.isLoggedIn)
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -17,6 +16,8 @@ const index = () => {
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(()=> {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        const router = useRouter()
         !loggedInUser && (
             async () => {
                 let myHeaders = new Headers();
@@ -38,10 +39,12 @@ const index = () => {
                 {
                     final && console.log("The user has been got")
                 }
+                router.refresh()
+
             }
-        )()
+
+    )()
     }, [dispatch, loggedInUser])
-    router.refresh()
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [name, setName] = useState(null)
 
