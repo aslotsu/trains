@@ -71,7 +71,6 @@ const LoginAuth = () => {
                 </div>
             </div>
 
-
             <div className={form_control}>
                 <div className={input}>
                     <label className={label} htmlFor="password">Password</label>
