@@ -35,11 +35,9 @@ const Home = () => {
                 {
                     final && console.log("The user has been got")
                 }
-                window.location.reload()
+
             }
         )()
-
-        console.log(loggedInUser, "Might reload the page in a jiff")
     }, [router,dispatch, loggedInUser])
 
 

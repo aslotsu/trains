@@ -16,6 +16,7 @@ const modalSlice = createSlice({
         },
         login: state => {
             state.isLoggedIn = true
+            window.location.reload()
         },
         logout: state => {
             state.isLoggedIn = false
