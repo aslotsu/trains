@@ -22,6 +22,7 @@ const index = () => {
         const final = await response.text()
         console.log("Final result",final)
         setName(final.email)
+        console.log("Email of logged in user", final.email)
         response.status === 200 && console.log("The user has been got")
     }
 
