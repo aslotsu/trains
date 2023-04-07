@@ -5,9 +5,12 @@ import {AnimatePresence, motion} from "framer-motion";
 import {useEffect, useState} from "react";
 import {console} from "next/dist/compiled/@edge-runtime/primitives/console";
 import {login} from "@/store/features/modal";
+import {useRouter} from "next/router";
 
 const index = () => {
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const router = useRouter()
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const loggedInUser = useSelector(state => state.modal.isLoggedIn)
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -39,6 +42,8 @@ const index = () => {
             }
         )()
     }, [dispatch, loggedInUser])
+    router.reload()
+
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [name, setName] = useState(null)
 
