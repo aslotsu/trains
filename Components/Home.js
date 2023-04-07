@@ -37,8 +37,8 @@ const Home = () => {
         )()
     }, [dispatch, loggedInUser])
     useEffect(()=> {
-        ( router.refresh() )
-    },[router])
+        router.refresh()
+    },[])
 
 
 
