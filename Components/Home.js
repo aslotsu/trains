@@ -1,11 +1,10 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect,  useState} from "react";
 import {console} from "next/dist/compiled/@edge-runtime/primitives/console";
-import {login, refresh} from "@/store/features/modal";
+import {login} from "@/store/features/modal";
 import {AnimatePresence, motion} from "framer-motion";
 import Portal from "@/Components/Portal";
 import AuthPopup from "@/Components/AuthPopup";
-import Router from "next/navigation";
 
 
 const Home = () => {
@@ -13,7 +12,6 @@ const Home = () => {
 
 
     const loggedInUser = useSelector(state => state.modal.isLoggedIn)
-    const refreshed = useSelector(state => state.modal.refreshed)
     const dispatch = useDispatch()
 
     useEffect(()=> {
@@ -37,16 +35,11 @@ const Home = () => {
                 {
                     final && console.log("The user has been got")
                 }
-                {
-                    if (!refreshed){
-                        Router.redirect('/')
-                        dispatch(refresh())
-                    }
-                }
+
 
             }
         )()
-    }, [dispatch, loggedInUser, refreshed])
+    }, [dispatch, loggedInUser])
 
     const [name, setName] = useState(null)
 

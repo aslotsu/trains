@@ -6,7 +6,6 @@ const modalSlice = createSlice({
         open : false,
         hasAccount: false,
         isLoggedIn: false,
-        refreshed: false
     },
     reducers: {
         toggle : state => {
@@ -21,9 +20,7 @@ const modalSlice = createSlice({
         logout: state => {
             state.isLoggedIn = false
         },
-        refresh: state => {
-            state.refreshed = true
-        }
+
 
     }
 })
