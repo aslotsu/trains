@@ -24,9 +24,9 @@ const index = () => {
     }
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    useEffect(async () => {
+    useEffect( () => {
         {
-            loggedInUser && await getUser()
+            loggedInUser && getUser()
         }
     },[loggedInUser])
     // eslint-disable-next-line react-hooks/rules-of-hooks
