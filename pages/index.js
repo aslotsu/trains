@@ -14,7 +14,7 @@ const index = () => {
         let myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/get-user')
-        const final = await response.json()
+        const final = await response
         console.log("Final result",final)
         setName(final.email)
         response.status === 200 && console.log("The user has been got")
