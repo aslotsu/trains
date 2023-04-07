@@ -1,9 +1,16 @@
 import {blob, me} from "../styles/Close.module.css"
 import {useDispatch} from "react-redux";
 import {toggle} from "@/store/features/modal";
+import {useRouter} from "next/navigation";
 const CloseSvg = () => {
+    const router = useRouter()
+
     const dispatch = useDispatch()
-    return <div className={blob} onClick={()=> dispatch(toggle())}>
+    return <div className={blob} onClick={()=> {
+        console.log(`Page refreshing`)
+        router.refresh()
+        dispatch(toggle())
+    }}>
         <svg className={me} fill="#000000" height="800px" width="800px"
              xmlns="http://www.w3.org/2000/svg"
              viewBox="0 0 512 512">
