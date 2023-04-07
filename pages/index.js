@@ -19,10 +19,10 @@ const index = () => {
         myHeaders.append("Content-Type", "application/json");
         let response = await fetch('https://go-jwt-auth-production.up.railway.app/users/get-user')
         const final = await response.json()
-        console.log(final)
+        dispatch(login())
+        console.log("Final result",final)
         setName(final.email)
         response.status === 200 && console.log("The user has been got")
-        dispatch(login())
     }
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
