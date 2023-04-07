@@ -54,7 +54,7 @@ const Home = () => {
             {openModal && <Portal >
                 <AuthPopup as={motion.div} />
             </Portal>}
-            {loggedInUser && <h1>Welcome {name} to the app dear user!</h1>}
+            {loggedInUser && <h1 onClick={notify}>Welcome {name} to the app dear user!</h1>}
 
         </AnimatePresence>
     </main>
