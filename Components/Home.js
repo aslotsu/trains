@@ -41,7 +41,7 @@ const Home = () => {
             }
 
         )()
-    }, [dispatch, loggedInUser, router])
+    }, [dispatch, loggedInUser])
 
     const [name, setName] = useState(null)
 
