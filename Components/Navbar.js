@@ -24,7 +24,7 @@ const Navbar = () => {
                hasAccount && dispatch(changeForm())
            }}>Register</button>
                </>
-           : <button>Log tf out</button>}
+           : <button className={auth}>Log tf out</button>}
        </div>
     </nav>
 
