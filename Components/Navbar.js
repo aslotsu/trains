@@ -64,7 +64,7 @@ const Navbar = () => {
                    await getUser()
                    router.refresh()
            }
-               }>Log tf out</button>}
+               }>Log out</button>}
        </div>
     </nav>
 
