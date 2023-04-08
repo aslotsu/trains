@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 
 const Home = () => {
 
-    const notify = () => toast("Login was successful, continue")
+    const notify = () => toast.success("Login was successful, continue")
 
 
 
